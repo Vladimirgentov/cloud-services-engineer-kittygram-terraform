@@ -12,7 +12,7 @@ on:
           - plan
           - apply
           - destroy
-
+	  - state-rm-bucket
 permissions:
   contents: read
 
@@ -63,6 +63,13 @@ jobs:
 
       - name: Terraform Validate
         run: terraform validate
+
+      - name: Remove app bucket from Terraform state
+        if: ${{ github.event.inputs.action == 'state-rm-bucket' }}
+        run: |
+          terraform state list
+          terraform state rm yandex_storage_bucket.kittygram
+          terraform state list
 
       - name: Terraform Plan
         if: ${{ github.event.inputs.action == 'plan' }}
