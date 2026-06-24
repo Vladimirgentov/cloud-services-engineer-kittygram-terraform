@@ -12,7 +12,8 @@ on:
           - plan
           - apply
           - destroy
-	  - state-rm-bucket
+          - state-rm-bucket
+
 permissions:
   contents: read
 
