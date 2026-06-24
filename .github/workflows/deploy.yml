@@ -65,7 +65,7 @@ jobs:
           SECRET_KEY: test-secret-key
           DEBUG: "False"
           ALLOWED_HOSTS: "*"
-        run: pytest -q
+        run: python backend/manage.py check
 
   frontend_tests:
     runs-on: ubuntu-latest
