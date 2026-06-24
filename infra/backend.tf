@@ -15,7 +15,7 @@ terraform {
 
     # Значение переопределяется в GitHub Actions через backend-config.
     # Бакет для state должен быть создан заранее, до terraform init.
-    bucket = "REPLACE_WITH_YOUR_TFSTATE_BUCKET"
+    bucket = "kittygram-tfstate-vladimirgentov"
     region = "ru-central1"
     key    = "kittygram/tf-state.tfstate"
 
